@@ -1,17 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import Main from './Components/Main';
+import './stylesheet.css';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// const tasks = [
+//   "Take out the bins",
+//   "Take out the cat",
+//   "Take out the dog",
+//   "Take out the dog",
+// ];
+
+
+// class List extends React.Component {
+//   render() {
+//     return (
+//       <ol>
+//         {this.props.tasks.map((task, index) => ( // this is important - it points to the component instance that is being rendered.
+//           <li key={index}> {task}</li>))}        {/* any tasks passed in from the component props of the List items */ }
+//       </ol>
+//     )
+//   }
+// }
+// class Title extends React.Component {
+//   render() {
+//     return <h1> {this.props.title} </h1>
+//   }
+// }
+// class Main extends React.Component {
+//   render() {
+//     return <div>
+//             <Title title={'To Do List'}/>
+//             <List tasks={['Mow the dog', 'Walk the lawn']}/>
+//             <List tasks={['hose', 'laundry']}/>
+//           </div>
+//   }
+// }
+
+ReactDOM.render(<Main />, document.getElementById("root"));
