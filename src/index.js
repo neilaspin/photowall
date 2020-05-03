@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Main from './Components/Main';
 import './stylesheet.css';
-
+import {BrowserRouter} from 'react-router-dom';
 
 // const tasks = [
 //   "Take out the bins",
@@ -37,4 +37,5 @@ import './stylesheet.css';
 //   }
 // }
 
-ReactDOM.render(<Main />, document.getElementById("root"));
+// help the app stay aware of changes in the url
+ReactDOM.render(<BrowserRouter><Main /></BrowserRouter>, document.getElementById("root"));

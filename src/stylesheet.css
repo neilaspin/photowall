@@ -91,3 +91,64 @@ button, .button, .remove-button {
     border-color: #00f;
     outline: 0;
    }
+   /* .addIcon{
+       margin : 20px auto;
+       display: table;
+       padding: 40px;
+       /* //background-image: ur('logo512.png'); */
+       /* background: url("https://www.flaticon.com/free-icon/plus_1828817") center no-repeat;   */
+       /* background: url("https://www.flaticon.com/free-icon/plus_1828817?term=buttons&page=1&position=18") center no-repeat; 
+       background-size: contain; */
+    
+   /* } */ 
+
+  .addIcon {
+   margin : 20px auto;
+   background-color: #008CBA; /* Green */
+   border: none;
+   color: white;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: flex;
+   justify-content: center;
+   font-size: 16px;
+  }
+  .form { 
+      background: whitesmoke;
+      margin: 0 auto; /* centers element along axis */
+      max-width: 360px;
+      padding: 45px;
+      text-align: center;
+
+  }
+
+  .form input {
+      font-family: sans-serif;
+      background: #f2f2f2;
+      width: 100%;
+      border: none;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 14px;
+      margin: 0 0 15;
+  }
+
+  /* only affect the buttons in form  */
+  .form button {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    background: #065784;
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+  }
+  .form button:hover {
+      background: #7B85B9;
+  }
+
+  .button:hover {
+      border-color: blue;
+  }

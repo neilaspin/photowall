@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import Title from './Title';
 import PhotoWall from './PhotoWall'
+import AddPhoto from './AddPhoto'
 
 class Main extends Component {
     constructor() { // initialise the state of our component
@@ -21,22 +22,49 @@ class Main extends Component {
             id: 2,
             description: "On a vacation!",
             imageLink: "https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/08/24/104670887-VacationExplainsTHUMBWEB.1910x1000.jpg"
-        }]
+        }],
+        screen: 'photo' // photos, addPhoto
         }
         this.removePhoto = this.removePhoto.bind(this); // stops the below this.setState below from breaking
+        this.navigate = this.navigate.bind(this);
     }
     removePhoto(postRemoved) {
       console.log(postRemoved.description);
       this.setState((state) => ({
         posts: state.posts.filter(post => post !== postRemoved) // takes the phote selected out of the array stack
       }))
-
+    }
+    navigate() {
+      this.setState({
+        screen : 'addPhoto' // pass it down as prop to the render methood
+      })
     }
     render() {
-      return <div>
-              <Title title={'Photowall'}/>
-              <PhotoWall posts={this.state.posts} onRemovePhoto={this.removePhoto}/>
-            </div>
+      console.log("render");
+      return (
+        <div>
+          {
+            this.state.screen === 'photo' && (
+          <div>
+            <Title title={"Photowall"} />
+            <PhotoWall
+              posts={this.state.posts}
+              onRemovePhoto={this.removePhoto}
+              onNavigate = {this.navigate} // pass this into photowall
+            />
+          </div>
+            )
+          }
+            {
+              this.state.screen === 'addPhoto' && (
+            <div>
+            <AddPhoto />
+          </div>
+              )
+           }
+        </div>
+          
+      );
     }
-  }
+}
   export default Main
